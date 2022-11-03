@@ -27,8 +27,14 @@ def main():
     args = parser.parse_args()
     cmd = args.command
     name = args.name or cmd  # default to name of command if no name given
+    print(args)
 
     tracker = EmissionsTracker(project_name=name)
     tracker.start()
     os.system(cmd)
+    print(cmd)
     tracker.stop()
+
+
+if __name__ == "__main__":
+    main()
